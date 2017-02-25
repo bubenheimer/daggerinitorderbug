@@ -1,0 +1,4 @@
+include ':app'
+include ':dagger'
+include ':dagger-android'
+include ':dagger-android-support'

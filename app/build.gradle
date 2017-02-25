@@ -1,0 +1,39 @@
+ext {
+    supportLibVersion = '25.2.0'
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+
+    defaultConfig {
+        applicationId 'org.bubenheimer.dagger'
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionName '1.0'
+        versionCode 1
+        resConfigs 'en', 'en-rUS'
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+        }
+    }
+}
+
+dependencies {
+    compile "com.android.support:appcompat-v7:${supportLibVersion}"
+
+    compile project(path: ':dagger')
+    compile project(path: ':dagger-android')
+    compile project(path: ':dagger-android-support')
+    compile 'javax.inject:javax.inject:1'
+//    compile "com.google.dagger:dagger-android-support:${daggerVersion}"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.10-rc1"
+}
