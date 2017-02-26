@@ -5,16 +5,16 @@ import android.os.Bundle;
 import org.bubenheimer.dagger.R;
 import org.bubenheimer.dagger.fragment.MainFragment;
 
-import dagger.android.support.DaggerAppCompatActivity;
+import dagger.android.DaggerActivity;
 
-public final class MainActivity extends DaggerAppCompatActivity {
+public final class MainActivity extends DaggerActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new MainFragment()).commitNow();
+            getFragmentManager().beginTransaction().add(R.id.fragment_container, new MainFragment()).commitNow();
         }
     }
 }

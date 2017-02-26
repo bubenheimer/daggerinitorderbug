@@ -2,7 +2,6 @@ package org.bubenheimer.dagger.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,8 @@ import android.view.ViewGroup;
 import org.bubenheimer.dagger.R;
 import org.bubenheimer.dagger.childfragment.ChildFragment;
 
-import dagger.android.support.DaggerFragment;
+import dagger.android.DaggerFragment;
+
 
 public final class MainFragment extends DaggerFragment {
     @Override
@@ -18,10 +18,9 @@ public final class MainFragment extends DaggerFragment {
         super.onAttach(context);
     }
 
-    @Nullable
     @Override
-    public View onCreateView(final LayoutInflater inflater, @Nullable final ViewGroup container,
-                             @Nullable final Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
+                             final Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_main, container, false);
 
         if (savedInstanceState == null) {

@@ -7,10 +7,10 @@ package org.bubenheimer.dagger.app;
 import org.bubenheimer.dagger.activity.MainActivityModule;
 
 import dagger.Component;
-import dagger.android.support.AndroidSupportInjectionModule;
+import dagger.android.AndroidInjectionModule;
 
 @Component(modules = {
-        AndroidSupportInjectionModule.class,
+        AndroidInjectionModule.class,
         MainActivityModule.class
 })
 interface AppComponent {
